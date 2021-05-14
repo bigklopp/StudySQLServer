@@ -1,0 +1,34 @@
+-- 문자열 함수 사용 빈도 하
+SELECT ASCII('B'), CHAR(66); -- 사용 빈도 하
+SELECT UNICODE('가'), NCHAR(44032);
+
+
+-- 문자열 연결
+SELECT CONCAT('SQL ', ' SERVER ', 2019) AS [NAME]; -- 사용 빈도 상
+SELECT 'SQL' + ' SERVER ' + '2019';
+SELECT 'SQL' + ' SERVER ' + CAST(2019 AS VARCHAR);
+
+-- 단어 시작위치 0부터 시작(C#)이 아니라 1부터 시작(DB)
+SELECT CHARINDEX('world', 'Hello world');
+
+-- LEFT, RIGHT, SUBSTRING, LEN, LOWER, UPPER, LTRIM, RTRIM
+DECLARE @STR VARCHAR(20);
+SET @STR = 'SQL SERVER 2019';
+SELECT LEFT(@STR, 3), RIGHT(@STR, 4);
+
+SELECT SUBSTRING('대한민국만세!',5,2);
+
+SELECT LEN('HELLO WORLD');
+
+SELECT LOWER('HELLO WORLD');
+
+SELECT UPPER('heldfoasdf');
+
+SELECT LTRIM('      ASD     1');
+SELECT RTRIM('1      ASD     ');
+SELECT TRIM('      ASD     ');
+
+-- REPLACE 사용빈도 최상
+SELECT REPLACE('SQL SERVER 2017','SERVER','서버');
+
+SELECT FORMAT(GETDATE(), 'dd/MM/yyyy'); 
